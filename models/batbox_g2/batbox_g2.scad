@@ -3,7 +3,7 @@
 $fn=50;
 //ammo can inside dimensions.  long side is x axis.
 can_x = 281;
-can_y = 145;
+can_y = 144;
 can_z = 173;
 can_gap = 1;    // leave this gap between the box and can walls
 
@@ -16,7 +16,9 @@ box_max_y = can_y - 2 * can_gap;
 box_max_z = can_z;
 
 INCH=25.4;
-THREAD=1/4*INCH-.2;
+//THREAD=1/4*INCH-.2;
+THREAD=3.1;           // #6-32
+
 
 module column(xoffset,ny, batx, baty, batz, cubey) {
     border=5;
@@ -41,7 +43,7 @@ module column(xoffset,ny, batx, baty, batz, cubey) {
     }
 }
 
-module b0(nx, ny, batx, baty, cubex=-1, cubey=box_max_y, cubez=30) {
+module b0(t,nx, ny, batx, baty, cubex=-1, cubey=box_max_y, cubez=30) {
     cubex = (cubex==-1) ? wall+nx*(wall+batx) : cubex;
     difference() {
         union() {
@@ -63,4 +65,7 @@ module b1(nx, ny, batx, baty, cubex=-1, cubey=box_max_y, cubez=30) {
     }
 }
 
-b0(2,7,32.5,17.5);
+//b0("3s500",2,7,32.5,17.5);
+//b0("4s1800",1,4,36,34);
+b0("4s1800x2",1,2,38,69);
+
