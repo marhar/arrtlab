@@ -27,5 +27,19 @@ module lid() {
     }
 }
 
+module lid2() {
+    difference() {
+        union() {
+            cylinder(6,d=diam+4);
+            cylinder(10,d=diam-.2);
+            translate([0,0,10]) #cylinder(5,d1=diam-.2,d2=diam-.9);
+        }
+        translate([0,0,2]) cylinder(ht,d=diam-8);
+
+    }
+}
+
+
+
 // translate([0,0,165]) rotate([180,0,0]) box();
-lid();
+lid2();
