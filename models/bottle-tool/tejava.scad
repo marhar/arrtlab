@@ -1,7 +1,7 @@
 // tejava bottle opener
 
 $fn=50;
-hh=8;    // height
+hh=16;    // height
 
 module body() {
     // normal body that's easy to grip
@@ -9,8 +9,8 @@ module body() {
         sphere(2);
         hull() {
             cylinder(d=38,hh-2);
-            translate([-20,0,0]) cylinder(d=22,hh-6);
-            translate([20,0,0]) cylinder(d=22,hh-6);
+            translate([-20,0,0]) cylinder(d=22,6);
+            translate([20,0,0]) cylinder(d=22,6);
         }
     }
 }
@@ -40,7 +40,7 @@ module grips() {
 }
 
 module main() {
-    // main unit()
+    // main unit
     difference() {
         body();
         hole();
