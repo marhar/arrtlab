@@ -15,11 +15,6 @@ module body() {
     }
 }
 
-module debug_body() {
-    // for fiddling with cap fit
-    cylinder(d=34,hh);
-}
-
 bigd=28.4;
 litd=28.0;
 
